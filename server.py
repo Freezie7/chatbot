@@ -39,8 +39,7 @@ class Server():
         text = "Успешно удалено!"
         await bot.send_message(
             self.from_user.id,
-            text=text,
-            parse_mode='html')
+            text=text)
 
     @dispatcher.callback_query_handler(lambda call:
                                        call.data in ['cb_addnote', 'cb_update', 'cb_delnote'])
