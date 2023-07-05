@@ -1,0 +1,2 @@
+#TOKEN AlgoNote_bot
+TOKEN = '6379540089:AAEKbOQ61h2HcioM81f-v76nyA2tEsAOaHo'
