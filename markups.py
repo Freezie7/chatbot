@@ -5,7 +5,5 @@ class Markup:
     @staticmethod
     def start_markup():
         markup = InlineKeyboardMarkup(row_width=2)
-        markup.add(InlineKeyboardButton('Добавить замтеку', callback_data='cb_addnote'),
-                   InlineKeyboardButton('Изменить заметку', callback_data='cb_update'),
-                   InlineKeyboardButton('Удалить заметку', callback_data='cb_delnote'))
+        markup.add(InlineKeyboardButton('Добавить заметку', callback_data='cb_addnote'))
         return markup
