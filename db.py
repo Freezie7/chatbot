@@ -5,7 +5,7 @@ PROJECT_ROOT = Path(__file__).parent.parent
 
 class DB():
     def __init__(self):
-        self.conn = sqlite3.connect(PROJECT_ROOT / "bot_0.5.db")
+        self.conn = sqlite3.connect(PROJECT_ROOT / "bot_0.5.1.db")
         self.cursor = self.conn.cursor()
 
     def create_users(self):
@@ -15,7 +15,7 @@ class DB():
 
     def create_records(self):
         self.cursor.execute('''CREATE TABLE IF NOT EXISTS RECORDS(id INTEGER PRIMARY KEY AUTOINCREMENT,
-                            user_id INTEGER UNIQUE, note TEXT NOT NULL)''')
+                            user_id INTEGER REFERENCES USERS(id) ON DELETE CASCADE NOT NULL, note TEXT NOT NULL)''')
         self.conn.commit()
 
     def get_id(self, user_id):
